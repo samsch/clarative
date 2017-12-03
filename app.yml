@@ -1,0 +1,41 @@
+route:
+#  - /:
+#      title: Main Feed
+#      view: Index
+#      data: post
+  - /my-posts:
+      title: My Posts
+      view: Index
+      login:
+      data: post
+      match: userId
+  - /post/:id:
+      title: =post.title
+      view: Post
+      data: post
+      public: all
+  - /post:
+      login: write
+      clara: rest
+      data: post
+  - /login:
+      clara: login
+  - /register:
+      clara: register
+data:
+  post:
+    - id:
+    - title: string
+    - post: string
+    - user_id:
+    - timestamps:
+  tag:
+    - id:
+    - name: string
+    - timestamps:
+  post_tag:
+    - post_id:
+    - tag_id:
+    - timestamps:
+about:
+  title: Test App, Please Ignore
